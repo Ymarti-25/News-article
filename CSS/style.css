@@ -1,0 +1,201 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-family: 'Old English Text MT' , sans-serif; /*added old english font for the header*/
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+Nav a {
+    text-decoration: none;
+    color: #000; /* Text color for navigation links */
+    font-weight: bold;
+    font-size: 20px;
+} 
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    padding-top: 10px; /* Space between header and main content */
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #e7e6e6; /* light gray background */
+    color: #0c0c0c; /* black text color */
+}
+
+.article-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #FFF; /* White background */
+    color: #790505; /* Dark gray text color */
+    font-size: 30px;
+    padding-bottom: 40px; /* space between header and main content */
+}
+
+.article-header p {
+    font-size: 20px;
+}
+
+.article-content {
+    display: grid;
+    grid-template-columns: 1fr; /*Single column layout*/
+    gap: 20px; /* Spaces between images */
+    padding: 20px;
+}
+
+.article-content h3 {
+    font-size: 24px; /* Increase font size as needed */
+    margin-bottom: 10px; /* Reduce bottom margin to bring header closer to the paragraph */
+}
+
+.article-content section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.photo {
+    flex: 1 1 200px; /* This allows for a flexible layout where each photo box tries to occupy at least 200px but can grow if there's more space available. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo img {
+    width: 100%; /* This ensures the image scales based on its container's width. */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.article-content section p {
+    font-size: 20px; /* Changes the font size of Featured Article text */
+    margin-top: 0;
+}
+
+.featured-article p {
+    font-size: 20px; /* font size for Breaking News */
+}
+
+.latest-news p {
+    font-size: 18px; /* Daily Feed Font Size */
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3:1 ratio between content*/
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    float: right; /* Align the sidebar to the right */
+    width: 300px;
+    padding-left: 20px;
+}
+
+.advertisement {
+    padding: 10px;
+    border: 5px solid #6b0909;
+    text-align: center;
+    background-color: #FFF; /* White background */
+    margin-top: 20px;
+}
+
+.advertisement h3 {
+    font-size: 1.2em; /* font size for advertisement headings */
+    margin-bottom: 5px; /* bottom margin for spacing */
+}
+
+.advertisement p {
+    margin-bottom: 15px; /* Bottom margin for spacing */
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*Creates a responsive grid*/
+    gap: 20px; /* Spaces between photos */
+    padding: 20px;
+}
+
+.photo img {
+    width: 100%; /* Endure images are fully responsive within their containers */
+    height: auto; /*Maintain aspect ratio */
+    display:inline;
+    max-width: 100%; /* makes sure sizes don't expand past their contaner */
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center navigation items */
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Adjust gap between navigation items */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Hamburger Menu Style */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hide regular navigation items on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger menu*/
+    }
+
+@media (max-width: 768px) {
+    .photo img {
+        width: 100%; /* fill container width */
+        height: auto; /* Maintain aspect ratio*/
+    }
+}
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* Initially hide naigation items */
+    }
+
+    /* When clicking the hamburger menu, use JavaScrpt to toggle this class to display the itmes */
+    nav ul.active {
+        display: flex; /* Display navigation items in a column */
+    }
+}

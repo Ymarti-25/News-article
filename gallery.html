@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <nav>
+        <div class="hamburger">☰</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="article.html">Featured Article</a></li>
+            <li><a href="gallery.html">Photos</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+    <main class="photo-gallery">
+        <div class="photo"><img src="images/6c09e882d8cfae5a9d422dafeea284df.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/9093c1d90f4901bfb630dda863ad9be0.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/b05a611efe555d3a7f583823396fc0a3.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/d57dfea160a4d2bee1c1b6e01536ad03.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/ee2ced03b4e5f00efb1aa5174905ee58.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/f3912b76da5ae5676bfabe8fe529f4d5.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/aa7e2bc25f5afd99c5e835326319cd6a.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/9c3a347d4d7244ea4ac5fb2a64534742.jpg" alt="Photo description"></div>  
+        <div class="photo"><img src="images/6c09e882d8cfae5a9d422dafeea284df.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/9093c1d90f4901bfb630dda863ad9be0.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/b05a611efe555d3a7f583823396fc0a3.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/d57dfea160a4d2bee1c1b6e01536ad03.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/ee2ced03b4e5f00efb1aa5174905ee58.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/f3912b76da5ae5676bfabe8fe529f4d5.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/aa7e2bc25f5afd99c5e835326319cd6a.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/9c3a347d4d7244ea4ac5fb2a64534742.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/6c09e882d8cfae5a9d422dafeea284df.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/9093c1d90f4901bfb630dda863ad9be0.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/b05a611efe555d3a7f583823396fc0a3.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/d57dfea160a4d2bee1c1b6e01536ad03.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/ee2ced03b4e5f00efb1aa5174905ee58.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/f3912b76da5ae5676bfabe8fe529f4d5.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/aa7e2bc25f5afd99c5e835326319cd6a.jpg" alt="Photo description"></div>
+        <div class="photo"><img src="images/9c3a347d4d7244ea4ac5fb2a64534742.jpg" alt="Photo description"></div>
+    </main>
+    <div class="gallery-controls">
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </div>    
+
+    <script>
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const photos = document.querySelectorAll('.photo');
+        let currentIndex = 0;
+
+        // Function to show the current image and hide the rest
+        function showImage(index) {
+            photos.forEach((photo, i) => {
+                if (i === index) {
+                    photo.style.display = 'block';
+                } else {
+                    photo.style.display = 'none';
+                }
+            });
+        }
+
+        // Show the initial image
+        showImage(currentIndex);
+
+        // Event listener for previous button
+        prevButton.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            showImage(currentIndex);
+        });
+
+        // Event listener for next button
+        nextButton.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % photos.length;
+            showImage(currentIndex);
+        });
+    </script>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
